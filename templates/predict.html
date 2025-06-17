@@ -1,0 +1,117 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(" {% static 'DiabetesPrediction/images/pexels-engin-akyurt-1435752.jpg'%} ");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        form {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Drop shadow effect */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 400px; /* Limit the width of the table */
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .form-group input {
+            width: calc(100% - 20px);
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: dodgerblue;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: dodgerblue;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="center" >
+        <h1>Please Enter The Following Information:</h1>
+        <form action="result">
+            <table>
+                <tr>
+                    <th colspan="2">Diabetes Tester</th>
+                </tr>
+                <tr>
+                    <td>Pregnancies:</td>
+                    <td><input type="text" name="n1" id="n1" placeholder="Enter number of pregnancies"></td>
+                </tr>
+                <tr>
+                    <td>Glucose:</td>
+                    <td><input type="text" name="n2" id="glucose" placeholder="Enter glucose level"></td>
+                </tr>
+                <tr>
+                    <td>Blood Pressure:</td>
+                    <td><input type="text" name="n3" id="Blood Pressure" placeholder="Enter Blood Pressure"></td>
+                </tr>
+                <tr>
+                    <td>Skin Thickness:</td>
+                    <td><input type="text" name="n4" id="Skin Thickness" placeholder="Enter Skin Thickness"></td>
+                </tr>
+                <tr>
+                    <td>Insulin:</td>
+                    <td><input type="text" name="n5" id="Insulin" placeholder="Enter Insulin"></td>
+                </tr>
+                <tr>
+                    <td>BMI:</td>
+                    <td><input type="text" name="n6" id="BMI" placeholder="Enter BMI"></td>
+                </tr>
+                <tr>
+                    <td>Diabetes Pedigree Function:</td>
+                    <td><input type="text" name="n7" id="Diabetes Pedigree Function" placeholder="Enter Diabetes Pedigree Function"></td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td><input type="text" name="n8" id="Age" placeholder="Enter Age"></td>
+                </tr>
+            </table>
+            <input type="submit">
+        </form>
+        <div>Result: {{ result2 }}</div>
+    </div>
+</body>
+</html>
